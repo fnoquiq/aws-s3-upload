@@ -3,6 +3,8 @@ const morgan = require('morgan');
 
 const routes = require('./routes');
 
+require('./config/db');
+
 const app = express();
 
 app.use(express.json());
