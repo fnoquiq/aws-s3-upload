@@ -9,6 +9,7 @@ require('./config/db');
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
@@ -17,6 +18,5 @@ app.use(
 	express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
 );
 app.use(routes);
-app.use(cors());
 
 app.listen(3000);
